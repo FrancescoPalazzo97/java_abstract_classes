@@ -1,6 +1,8 @@
 package org.lessons.java;
 
-public class Ship extends Vehicle {
+import org.lessons.java.interfaces.Truckable;
+
+public class Ship extends Vehicle implements Truckable {
     private float length;
 
     public Ship(String brand, String model, float length, int power, int remainingFuel) {
@@ -37,5 +39,35 @@ public class Ship extends Vehicle {
 
     public void dock() {
         IO.println("This ship has been docked");
+    }
+
+    @Override
+    public float getShippableWeight() {
+        return 0;
+    }
+
+    @Override
+    public float getShippableLength() {
+        return 0;
+    }
+
+    @Override
+    public float getShippableWidth() {
+        return 0;
+    }
+
+    @Override
+    public float getShippableHeight() {
+        return 0;
+    }
+
+    @Override
+    public boolean isFragile() {
+        return false;
+    }
+
+    @Override
+    public boolean isWheeled() {
+        return false;
     }
 }

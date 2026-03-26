@@ -1,6 +1,8 @@
 package org.lessons.java;
 
-public class Plane extends Vehicle {
+import org.lessons.java.interfaces.Truckable;
+
+public class Plane extends Vehicle implements Truckable {
 
     public Plane(String brand, String model, int power, int remainingFuel) {
         super(brand, model, power, remainingFuel);
@@ -26,5 +28,35 @@ public class Plane extends Vehicle {
 
     public void land() {
         IO.println("This plane is landing");
+    }
+
+    @Override
+    public float getShippableWeight() {
+        return 0;
+    }
+
+    @Override
+    public float getShippableLength() {
+        return 0;
+    }
+
+    @Override
+    public float getShippableWidth() {
+        return 0;
+    }
+
+    @Override
+    public float getShippableHeight() {
+        return 0;
+    }
+
+    @Override
+    public boolean isFragile() {
+        return false;
+    }
+
+    @Override
+    public boolean isWheeled() {
+        return false;
     }
 }
